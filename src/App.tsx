@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <TopBar />
-      <div className={"pl-[48px] pr-[48px]"}>
+      <div className={"pl-[48px] pr-[48px] pt-[48px]"}>
         <SearchBar />
         <Routes>
           <Route path="/" element={<Home />} />
