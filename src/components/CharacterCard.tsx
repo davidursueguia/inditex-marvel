@@ -2,8 +2,10 @@ import { useState } from "react";
 import HeartIcon from "./HeartIcon";
 import { Character } from "../services/characters.ts";
 import cut from "../assets/cut.svg";
+import { useNavigate } from "react-router-dom";
 
 const CharacterCard = ({ character }: { character: Character }) => {
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
   const [favorite, setFavorite] = useState(false);
 
@@ -12,6 +14,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
       className="relative mr-4 pb-[24px] overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => navigate('/detail/' + character.id)}
     >
       <img
         src={character.thumbnail.path + "." + character.thumbnail.extension}
