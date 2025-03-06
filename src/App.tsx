@@ -1,20 +1,32 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.tsx";
-import Detail from "./pages/Detail.tsx";
+import CharacterDetail from "./pages/CharacterDetail.tsx";
 import TopBar from "./components/TopBar.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const App = () => {
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 1000 * 60 * 60 * 24,
+      },
+    },
+  });
+
+
   return (
     <>
-      <TopBar />
-      <div className={"pl-[48px] pr-[48px] pt-[48px]"}>
+      <QueryClientProvider client={queryClient}>
+        <TopBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/detail/:id" element={<CharacterDetail />} />
         </Routes>
-      </div>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   );
 };

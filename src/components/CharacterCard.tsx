@@ -1,8 +1,8 @@
 import { useState } from "react";
 import HeartIcon from "./HeartIcon";
-import { Character } from "../services/characters.ts";
 import cut from "../assets/cut.svg";
 import { useNavigate } from "react-router-dom";
+import { Character } from "../types/characterTypes.ts";
 
 const CharacterCard = ({ character }: { character: Character }) => {
   const navigate = useNavigate();
