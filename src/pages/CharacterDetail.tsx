@@ -1,0 +1,39 @@
+import { useParams } from "react-router-dom";
+import ComicCarrousel from "../components/ComicCarrousel.tsx";
+import { useCharacterById } from "../hooks/useCharacterById.ts";
+import Loading from "../components/Loading.tsx";
+import { useComicsByCharacterId } from "../hooks/useComics.ts";
+import ErrorMessage from "../components/ErrorMessage.tsx";
+
+const CharacterDetail = () => {
+  const { id } = useParams<{ id: string }>();
+  const { data: character, isLoading, isError } = useCharacterById(id);
+  const { data: comics, isLoading: comicsAreLoading, isError: comicsLoadingError } = useComicsByCharacterId(id);
+
+  if (!id) return <p className="text-center text-red-500">ID no válido.</p>;
+  if (isLoading) return <Loading />;
+  if (isError || !character) return <ErrorMessage message={'Error al cargar el personaje'}/>;
+
+  return (
+    <div className={"bg-black"}>
+      <div className="text-white flex items-center justify-center h-[320px] w-full px-8 lg:px-16">
+        <div className="w-64 h-64 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+            alt={character.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="ml-8 flex flex-col justify-center">
+          <h1 className="text-3xl font-bold">{character.name.toUpperCase()}</h1>
+          <p className="mt-2 text-gray-300 max-w-2xl text-left">
+            {character.description || "No description available."}
+          </p>
+        </div>
+      </div>
+      <ComicCarrousel comics={comics} isLoading={comicsAreLoading} isError={comicsLoadingError}/>
+    </div>
+  );
+};
+
+export default CharacterDetail;
