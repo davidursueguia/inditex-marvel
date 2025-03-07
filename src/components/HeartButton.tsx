@@ -1,5 +1,6 @@
 import heart_unselected from "../assets/heart_unselected.svg";
 import heart_selected from "../assets/heart_selected.svg";
+import heart_union from "../assets/heart_union.svg";
 import { useFavoritesStore } from "../store/useFavoritesStore.ts";
 import { Character } from "../types/characterTypes.ts";
 import * as React from "react";
@@ -7,9 +8,10 @@ import * as React from "react";
 interface HeartButtonProps {
   character: Character;
   size?: string;
+  hovered?: boolean
 }
 
-const HeartButton = ({ character, size = "h-6 w-6" }: HeartButtonProps) => {
+const HeartButton = ({ character, size = "h-6 w-6", hovered }: HeartButtonProps) => {
   const { favorites, addFavorite, removeFavorite } = useFavoritesStore();
 
   const isFavorite = favorites.some((fav) => fav.id === character.id);
@@ -23,7 +25,6 @@ const HeartButton = ({ character, size = "h-6 w-6" }: HeartButtonProps) => {
     }
   };
 
-
   return (
     <button
       onClick={toggleFavorite}
@@ -31,7 +32,7 @@ const HeartButton = ({ character, size = "h-6 w-6" }: HeartButtonProps) => {
     >
       <img
         className={`self-center cursor-pointer ${size}`}
-        src={isFavorite ? heart_selected : heart_unselected}
+        src={hovered && isFavorite ? heart_union : isFavorite ? heart_selected : heart_unselected}
         alt={isFavorite ? "liked" : "unliked"}
       />
     </button>
