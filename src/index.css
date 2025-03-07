@@ -9,3 +9,6 @@ body {
     padding: 0 !important;
     max-width: 100% !important;
 }
+:root {
+    --marvel-red: #EC1D24;
+}

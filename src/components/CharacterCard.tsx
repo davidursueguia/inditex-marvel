@@ -21,11 +21,11 @@ const CharacterCard = ({ character }: { character: Character }) => {
         className="w-full h-64 object-cover"
       />
 
-      <div className="w-full h-1 bg-red-600"></div>
+      <div className="w-full h-1 bg-[var(--marvel-red)]"></div>
       <div className="relative w-full h-12 overflow-hidden bg-black">
         <div
           className={`absolute top-0 left-0 w-full h-full transition-transform duration-150 transform ${
-            hovered ? "scale-y-100 bg-red-600" : "scale-y-0 bg-red-600"
+            hovered ? "scale-y-100 bg-[var(--marvel-red)]" : "scale-y-0 bg-[var(--marvel-red)]"
           } origin-top`}
         ></div>
 
