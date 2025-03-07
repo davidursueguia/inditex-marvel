@@ -12,7 +12,7 @@ const ComicCarrousel = ({ comics = [], isLoading, isError }: ComicCarrouselProps
 
   return (
     <div className="w-full px-8 py-12 bg-white text-black flex justify-center">
-      <div className={"w-[960px] text-center"}>
+      <div className={"w-240 text-center"}>
         <h2 className="text-2xl font-bold mb-6 text-left">COMICS</h2>
         <div className="flex gap-6 overflow-x-auto">
           {isLoading && Array.from({ length: 5 }).map((_, index) => <ComicSkeleton key={index} isLoading={isLoading}/>)}

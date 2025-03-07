@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 const TopBar = () => {
   const navigate = useNavigate();
   return (
-    <div className={"grid grid-cols-[1fr_auto_auto] items-center justify-between bg-black h-[84px] w-full pt-[16px] pr-[48px] pb-[16px] pl-[48px]"}>
-      <img src={logo} alt="Logo" className="w-[130px] h-[52px] hover:cursor-pointer" onClick={() => {
+    <div className={"grid grid-cols-[1fr_auto_auto] items-center justify-between bg-black h-21 w-full pt-4 pr-12 pb-4 pl-12"}>
+      <img src={logo} alt="Logo" className="w-32 h-13 hover:cursor-pointer" onClick={() => {
         navigate('/');
       }} />
       <img className={'hover:cursor-pointer'} onClick={() => {

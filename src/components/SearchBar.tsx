@@ -17,7 +17,7 @@ const SearchBar = ({ onSearch, resultsCount, isLoading }: SearchBarProps) => {
   }
 
   return (
-    <div className="flex flex-col w-full h-[77px] gap-[12px] pt-[12px] mb-5">
+    <div className="flex flex-col w-full h-20 gap-3 pt-3 mb-5">
       <div className="relative flex items-center">
         <img
           src={search}

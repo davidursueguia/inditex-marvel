@@ -11,7 +11,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
 
   return (
     <div
-      className="relative pb-[24px] overflow-hidden"
+      className="relative pb-6 overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => navigate('/detail/' + character.id)}
@@ -19,7 +19,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
       <img
         src={character.thumbnail.path + "." + character.thumbnail.extension}
         alt={character.name}
-        className="w-full h-[245px]"
+        className="w-full h-64"
       />
       <div className="w-full h-1 bg-red-600"></div>
       <div className="relative w-full h-12 overflow-hidden">
