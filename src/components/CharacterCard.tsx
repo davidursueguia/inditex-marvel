@@ -21,7 +21,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
         className="w-full h-64 object-cover"
       />
 
-      <div className="w-full h-1 bg-red-600"></div>
+      <div className="w-full h-1 bg-red-600"/>
 
       <div className="relative w-full h-12 overflow-hidden">
         <div

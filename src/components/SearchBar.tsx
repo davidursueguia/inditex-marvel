@@ -29,7 +29,7 @@ const SearchBar = ({ onSearch, resultsCount, isLoading }: SearchBarProps) => {
           value={query}
           placeholder="SEARCH A CHARACTER..."
           onChange={handleChange}
-          className="w-full pl-7 py-2 text-gray-600 border-b-2 border-black outline-none"
+          className="w-full pl-7 py-2 text-gray-600 border-b-1 border-black outline-none"
         />
       </div>
       <p className={'self-start'}>{isLoading ? 'LOADING RESULTS...' : resultsCount + ' RESULTS'}</p>
