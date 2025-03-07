@@ -25,12 +25,12 @@ const CharacterCard = ({ character }: { character: Character }) => {
 
       <div className="relative w-full h-12 overflow-hidden">
         <div
-          className={`absolute border-white border-r-1 border-b-1 bottom-0 left-0 w-full h-full transition-all duration-300 ${
+          className={`absolute  bottom-0 left-0 w-full h-full transition-all duration-300 ${
             hovered ? "bg-red-600" : "bg-black"
           }`}
         ></div>
 
-        <div className="absolute  bottom-0 left-0 w-full flex items-center justify-between px-2 py-2 z-10">
+        <div className="absolute left-0 w-full flex items-center justify-between px-2 py-2 z-10">
           <p className="text-white text-sm uppercase">{character.name}</p>
 
           <HeartButton character={character} hovered={hovered} />
@@ -39,7 +39,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
         <img
           src={cut}
           alt="cut"
-          className="filter fill-current absolute bottom-0 right-0 h-4 w-4 z-20"
+          className="filter fill-current absolute bottom-[-1px] right-[-1px] h-4 w-4 z-20"
         />
       </div>
     </div>
