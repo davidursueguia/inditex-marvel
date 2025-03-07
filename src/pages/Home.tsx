@@ -13,10 +13,11 @@ const Home = () => {
   const characters = searchQuery ? foundCharacters : defaultCharacters;
 
   return (
-    <div className={"pl-12 pr-12 pt-12"}>
-      <SearchBar onSearch={setSearchQuery} isLoading={isLoading || isSearching} resultsCount={characters ? characters.length : 0}/>
+    <div className="px-4 sm:px-6 md:px-12 pt-12">
+      <SearchBar onSearch={setSearchQuery} isLoading={isLoading || isSearching} resultsCount={characters ? characters.length : 0} />
       {isError && <ErrorMessage message={"Error while loading characters."} />}
-      <div className="grid gap-2 grid-cols-7 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
+
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
         {characters?.map((char) => (
           <CharacterCard key={char.id} character={char} />
         ))}
