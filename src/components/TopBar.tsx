@@ -8,7 +8,9 @@ const TopBar = () => {
       <img src={logo} alt="Logo" className="w-[130px] h-[52px] hover:cursor-pointer" onClick={() => {
         navigate('/');
       }} />
-      <img src={heart} alt={'favourites'}/>
+      <img className={'hover:cursor-pointer'} onClick={() => {
+        navigate('/favorites');
+      }} src={heart} alt={'favourites'}/>
       <p className={"text-white ml-2 mr-4"}>{3}</p>
     </div>
   );

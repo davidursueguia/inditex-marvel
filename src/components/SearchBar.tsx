@@ -3,9 +3,11 @@ import { ChangeEvent, useState } from "react";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
+  resultsCount: number;
+  isLoading: boolean;
 }
 
-const SearchBar = ({ onSearch }: SearchBarProps) => {
+const SearchBar = ({ onSearch, resultsCount, isLoading }: SearchBarProps) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -15,21 +17,22 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   }
 
   return (
-    <div className="w-full h-[77px] gap-[12px] pt-[12px]">
+    <div className="flex flex-col w-full h-[77px] gap-[12px] pt-[12px] mb-5">
       <div className="relative flex items-center">
         <img
           src={search}
           alt="search"
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5"
+          className="absolute h-5 w-5"
         />
         <input
           type="text"
           value={query}
           placeholder="SEARCH A CHARACTER..."
           onChange={handleChange}
-          className="w-full pl-10 pr-4 py-2 text-gray-600 border-b-2 border-black outline-none"
+          className="w-full pl-7 py-2 text-gray-600 border-b-2 border-black outline-none"
         />
       </div>
+      <p className={'self-start'}>{isLoading ? 'LOADING RESULTS...' : resultsCount + ' RESULTS'}</p>
     </div>
   );
 };
