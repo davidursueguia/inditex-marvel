@@ -28,12 +28,10 @@ const CharacterCard = memo(({ character }: { character: Character }) => {
             hovered ? "scale-y-100 bg-[var(--marvel-red)]" : "scale-y-0 bg-[var(--marvel-red)]"
           } origin-top`}
         ></div>
-
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-between px-2 py-2 z-10">
           <p className="text-white text-sm uppercase">{character.name}</p>
-          <HeartButton character={character} hovered={hovered} />
+          <HeartButton character={character} hovered={hovered}/>
         </div>
-
         <img
           src={cut}
           alt="cut"
