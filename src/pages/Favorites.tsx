@@ -19,7 +19,7 @@ const Favorites = () => {
         resultsCount={filteredFavorites.length}
         isLoading={false}
       />
-      <div className="grid grid-cols-7 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mt-6">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
         {filteredFavorites.map((char) => (
           <CharacterCard key={char.id} character={char} />
         ))}

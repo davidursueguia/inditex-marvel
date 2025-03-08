@@ -18,7 +18,7 @@ const Home = () => {
       <SearchBar onSearch={setSearchQuery} isLoading={isLoading || isSearching}
                  resultsCount={characters ? characters.length : 0} />
       {(isLoading || isSearching) &&
-        <div className={'grid grid-cols-7 gap-1'}>{Array.from({ length: 12 }).map((_, index) => (
+        <div className={'grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-1'}>{Array.from({ length: 12 }).map((_, index) => (
           <CharacterCardSkeleton key={index} />
         ))}</div>}
       {isError && <ErrorMessage message={"Error while loading characters."} />}
