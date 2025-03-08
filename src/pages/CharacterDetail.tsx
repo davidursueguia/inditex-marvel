@@ -22,10 +22,10 @@ const CharacterDetail = () => {
           <img
             src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
             alt={character.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full"
           />
         </div>
-        <div className="ml-8 flex flex-col justify-center">
+        <div className="ml-8 flex flex-col justify-center min-w-[640px]">
           <div className="flex w-full justify-between">
             <h1 className="text-3xl font-bold">{character.name.toUpperCase()}</h1>
             <HeartButton character={character} />
