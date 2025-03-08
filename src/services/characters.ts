@@ -32,10 +32,14 @@ export const getCharacterById = async (id: string): Promise<Character> => {
 
 export const getComicsByCharacterId = async (id: string): Promise<Comic[]> => {
   try {
-    const response = await api.get<ComicApiResponse>(`/characters/${id}/comics`);
-    return response.data.data.results.sort((a, b) => {
-      return new Date(a.modified).getTime() - new Date(b.modified).getTime();
+    const response = await api.get<ComicApiResponse>(`/characters/${id}/comics`, {
+      params: {
+        limit: 20,
+        orderBy: 'onsaleDate'
+      },
     });
+
+    return response.data.data.results;
   } catch (error) {
     console.error("Error al obtener los cómics:", error);
     throw new Error("Error fetching comics");
