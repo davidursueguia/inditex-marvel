@@ -15,7 +15,7 @@ const ComicCarrousel = ({ comics = [], isLoading, isError }: ComicCarrouselProps
         <h2 className="text-2xl font-bold mb-6 text-left">COMICS</h2>
         <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-custom pb-6">
           {isLoading &&
-            Array.from({ length: 5 }).map((_, index) => <ComicSkeleton key={index} isLoading={isLoading} />)}
+            Array.from({ length: 5 }).map((_, index) => <ComicSkeleton key={index} />)}
           {isError && <ErrorMessage message={"Error while loading chapters"} />}
           {!isLoading && !isError && comics.length === 0 && <p className="text-center">No comics available.</p>}
           {comics.map((comic) => (
