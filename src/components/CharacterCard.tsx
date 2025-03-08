@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import cut from "../assets/cut.svg";
 import { useNavigate } from "react-router-dom";
 import { Character } from "../types/characterTypes.ts";
 import HeartButton from "./HeartButton.tsx";
 
-const CharacterCard = ({ character }: { character: Character }) => {
+const CharacterCard = memo(({ character }: { character: Character }) => {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
 
@@ -31,7 +31,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
 
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-between px-2 py-2 z-10">
           <p className="text-white text-sm uppercase">{character.name}</p>
-          <HeartButton character={character} hovered={hovered}/>
+          <HeartButton character={character} hovered={hovered} />
         </div>
 
         <img
@@ -42,6 +42,6 @@ const CharacterCard = ({ character }: { character: Character }) => {
       </div>
     </div>
   );
-};
+}, (prevProps, nextProps) => prevProps.character.id === nextProps.character.id);
 
 export default CharacterCard;

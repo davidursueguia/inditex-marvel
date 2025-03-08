@@ -4,6 +4,7 @@ import heart_union from "../assets/heart_union.svg";
 import { useFavoritesStore } from "../store/useFavoritesStore.ts";
 import { Character } from "../types/characterTypes.ts";
 import * as React from "react";
+import { memo } from "react";
 
 interface HeartButtonProps {
   character: Character;
@@ -11,7 +12,7 @@ interface HeartButtonProps {
   hovered?: boolean
 }
 
-const HeartButton = ({ character, size = "h-6 w-6", hovered }: HeartButtonProps) => {
+const HeartButton = memo(({ character, size = "h-6 w-6", hovered }: HeartButtonProps) => {
   const { favorites, addFavorite, removeFavorite } = useFavoritesStore();
 
   const isFavorite = favorites.some((fav) => fav.id === character.id);
@@ -37,6 +38,6 @@ const HeartButton = ({ character, size = "h-6 w-6", hovered }: HeartButtonProps)
       />
     </button>
   );
-};
+}, (prevProps, nextProps) => prevProps.character.id === nextProps.character.id);
 
 export default HeartButton;
