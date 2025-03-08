@@ -12,3 +12,17 @@ body {
 :root {
     --marvel-red: #EC1D24;
 }
+
+.scrollbar-custom::-webkit-scrollbar {
+    height: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: var(--marvel-red);
+    border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
