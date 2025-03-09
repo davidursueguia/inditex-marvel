@@ -4,8 +4,8 @@ import { useCharacterById } from "../hooks/useCharacterById.ts";
 import Loading from "../components/Loading.tsx";
 import { useComicsByCharacterId } from "../hooks/useComics.ts";
 import ErrorMessage from "../components/ErrorMessage.tsx";
-import HeartButton from "../components/HeartButton.tsx";
 import cut from "../assets/cut.svg";
+import CharacterInfo from "../components/CharacterInfo.tsx";
 
 const CharacterDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,15 +25,7 @@ const CharacterDetail = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="mt-4 lg:mt-0 lg:ml-8 flex flex-col justify-center w-full max-w-[640px]">
-          <div className="flex w-full justify-between">
-            <h1 className="text-2xl sm:text-3xl font-bold">{character.name.toUpperCase()}</h1>
-            <HeartButton character={character} />
-          </div>
-          <p className="mt-2 text-gray-300 text-sm sm:text-base text-left">
-            {character.description || "No description available."}
-          </p>
-        </div>
+        <CharacterInfo character={character} />
         <img
           className="h-6 w-6 absolute bottom-[-3px] right-[-3px]"
           src={cut}

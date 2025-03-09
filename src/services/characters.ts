@@ -11,7 +11,6 @@ export const getCharacters = async (): Promise<Character[]> => {
         offset: 0,
       },
     });
-    console.log("response", response);
     return response.data.data.results;
   } catch (error) {
     console.error("Error al obtener los personajes:", error);
@@ -22,7 +21,6 @@ export const getCharacters = async (): Promise<Character[]> => {
 export const getCharacterById = async (id: string): Promise<Character> => {
   try {
     const response = await api.get<CharacterApiResponse>(`/characters/${id}`);
-    console.log("response", response.data.data.results[0]);
     return response.data.data.results[0];
   } catch (error) {
     console.error("Error al obtener el personaje:", error);

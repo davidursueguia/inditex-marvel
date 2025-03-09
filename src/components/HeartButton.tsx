@@ -14,11 +14,8 @@ interface HeartButtonProps {
 
 const HeartButton = memo(({ character, size = "h-6 w-6", hovered }: HeartButtonProps) => {
     const { favorites, addFavorite, removeFavorite } = useFavoritesStore();
-
     const isFavorite = favorites.some((fav) => fav.id === character.id);
-
-    console.log(`hovered: ${hovered}, isFavorite: ${isFavorite}`);
-
+    
     const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
       if (isFavorite) {
