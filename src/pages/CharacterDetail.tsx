@@ -15,7 +15,7 @@ const CharacterDetail = () => {
   if (isError || !character) return <ErrorMessage message={"Error al cargar el personaje"} />;
 
   return (
-    <div>
+    <div className={'bg-black'}>
       <CharacterInfo character={character} />
       <ComicCarrousel
         comics={comics}
