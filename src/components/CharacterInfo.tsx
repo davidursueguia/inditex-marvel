@@ -8,7 +8,7 @@ interface CharacterInfoProps {
 
 const CharacterInfo = ({ character }: CharacterInfoProps) => (
   <div className="flex flex-col md:!flex-row lg:!flex-row w-full justify-self-center text-white px-4 lg:px-0 max-w-[960px]">
-    <div className="w-full lg:w-64 h-64 overflow-hidden rounded-lg shadow-lg mb-4 lg:mb-0 ">
+    <div className="w-full lg:w-64 overflow-hidden rounded-lg shadow-lg mb-4 lg:mb-0 ">
       <img
         src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
         alt={character.name}
