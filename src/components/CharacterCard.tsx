@@ -30,7 +30,7 @@ const CharacterCard = memo(({ character }: { character: Character }) => {
         ></div>
         <div className="absolute bottom-0 left-0 w-full flex items-center justify-between px-2 py-2 z-10">
           <p className="text-white text-sm uppercase">{character.name}</p>
-          <HeartButton character={character} hovered={hovered}/>
+          <HeartButton character={character} hovered={hovered} size={'h-3 w-3'}/>
         </div>
         <img
           src={cut}
