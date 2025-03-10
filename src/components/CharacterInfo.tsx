@@ -14,11 +14,11 @@ const CharacterInfo = ({ character }: CharacterInfoProps) => (
       className="w-full h-full object-cover sm:!h-[500px] sm:!w-full"
     />
     <div className="lg:ml-8 flex flex-col justify-center w-full">
-      <div className="flex md:ml-11 ml-7 justify-between">
+      <div className="flex md:ml-11 justify-between">
         <h1 className="text-2xl sm:text-3xl font-bold">{character.name.toUpperCase()}</h1>
         <HeartButton character={character} />
       </div>
-      <p className="self-start ml-6 mt-2 text-gray-300 text-sm sm:text-base sm:text-start sm:ml-7 sm:pb-9">
+      <p className="self-start md:!ml-11 lg:!ml-11 mt-2 text-gray-300 text-sm sm:text-base sm:text-start sm:ml-7 sm:pb-9">
         {character.description || "No description available."}
       </p>
     </div>
