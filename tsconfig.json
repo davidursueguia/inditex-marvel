@@ -9,18 +9,19 @@
     }
   ],
   "compilerOptions": {
-    "module": "NodeNext",
-    "target": "ESNext",
-    "jsx": "react-jsx",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "allowJs": true,
     "allowImportingTsExtensions": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "target": "ES2020"
   },
   "types": [
     "vite/client",
     "node",
     "jest",
     "@testing-library/jest-dom"
-  ]
+  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/types/svg.d.ts", "jest.config.ts"]
 }

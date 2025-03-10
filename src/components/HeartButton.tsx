@@ -15,7 +15,7 @@ interface HeartButtonProps {
 const HeartButton = memo(({ character, size = "h-6 w-6", hovered }: HeartButtonProps) => {
     const { favorites, addFavorite, removeFavorite } = useFavoritesStore();
     const isFavorite = favorites.some((fav) => fav.id === character.id);
-    
+
     const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
       if (isFavorite) {
@@ -31,6 +31,7 @@ const HeartButton = memo(({ character, size = "h-6 w-6", hovered }: HeartButtonP
         className="focus:outline-none z-20 relative"
       >
         <img
+          test-id="heart-button"
           className={`self-center cursor-pointer ${size}`}
           src={
             isFavorite && hovered

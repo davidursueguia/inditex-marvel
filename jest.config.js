@@ -1,13 +1,18 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} **/
-export default {
+const config = {
   preset: 'ts-jest',
-  testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-  moduleNameMapper: {
-    "\\.(css|scss)$": "identity-obj-proxy",
-    "^@/(.*)$": "<rootDir>/src/$1"
-  },
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest"
-  }
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.jsx?$": "babel-jest" 
+  },
+  moduleNameMapper: {
+    "\\.(css|less|scss)$": "identity-obj-proxy",
+    "\\.svg$": "<rootDir>/__mocks__/svgMock.js"
+  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  transformIgnorePatterns: [
+    "node_modules/(?!react-router-dom/.*)" 
+  ],
 };
+
+export default config;
