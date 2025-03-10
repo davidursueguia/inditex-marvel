@@ -72,3 +72,10 @@ Luego, para iniciar la aplicación en modo desarrollo, utiliza el siguiente coma
 ```bash
 npm run dev
 ```
+
+### 🖥️ **Probar aplicación**
+
+La página ha sido publicada en https://inditex-marvel.vercel.app/.
+
+### 🏅 **Créditos**
+Aplicación web desarrollada por David Ursueguia para la prueba técnica de Inditex.
