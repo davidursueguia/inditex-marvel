@@ -1,8 +1,10 @@
 import ErrorMessage from "../ErrorMessage.tsx";
 import { render, screen} from "@testing-library/react";
 
-test("Error message", () => {
-  render(<ErrorMessage message={'this is an error'} />);
-  const heading = screen.getByText("this is an error");
-  expect(heading).toBeInTheDocument();
-});
+describe('ErrorMessage', () => {
+  test('Check if message is renderer', () => {
+    render(<ErrorMessage message={'this is an error'} />);
+    const text = screen.getByText('this is an error');
+    expect(text).toBeInTheDocument();
+  });
+})
