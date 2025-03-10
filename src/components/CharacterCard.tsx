@@ -11,7 +11,7 @@ const CharacterCard = memo(({ character }: { character: Character }) => {
   return (
     <div
       data-testid="character-card"
-      className="relative pb-6 overflow-hidden cursor-pointer"
+      className="relative overflow-hidden cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => navigate("/detail/" + character.id)}

@@ -13,7 +13,7 @@ const CharacterInfo = ({ character }: CharacterInfoProps) => (
       alt={character.name}
       className="w-full h-full object-cover sm:!h-[500px] sm:!w-full"
     />
-    <div className="lg:ml-8 flex flex-col justify-center w-full">
+    <div className="lg:ml-8 flex flex-col justify-center w-full pb-6 pt-6">
       <div className="flex md:ml-11 justify-between">
         <h1 className="text-2xl sm:text-3xl font-bold">{character.name.toUpperCase()}</h1>
         <HeartButton character={character} />
