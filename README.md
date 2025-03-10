@@ -1,7 +1,6 @@
 # Marvel Characters App
 
 Esta aplicación ha sido desarrollada utilizando **React**, **Vite**, **TypeScript**, **Zustand**, **React Query** y **Tailwind CSS**. Consume la API de Marvel para mostrar una lista de personajes con sus respectivos cómics y detalles.
-
 ## 🗉 **Requisitos Técnicos Cumplidos**
 La aplicación cumple con los siguientes requisitos mencionados en el enunciado de la prueba técnica:
 
@@ -60,3 +59,17 @@ Se implementaron tests con **Jest** y **React Testing Library** para garantizar 
   "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
   "test": "jest"
 }
+```
+
+## ⚙️ **Instalación y Ejecución**
+### **Iniciar la aplicación**
+Antes de iniciar la aplicación, instala las dependencias con el siguiente comando:
+
+```bash
+npm install
+```
+Luego, para iniciar la aplicación en modo desarrollo, utiliza el siguiente comando:
+
+```bash
+npm run dev
+```
