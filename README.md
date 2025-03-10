@@ -10,7 +10,7 @@ La aplicación cumple con los siguientes requisitos mencionados en el enunciado 
 ✅ Se implementó un contexto global con **Zustand** para gestionar el estado global de favoritos.  
 ✅ Sistema de caché eficiente utilizando **React Query** para almacenar datos de personajes durante 24 horas.  
 ✅ Implementación de **Skeletons** para mostrar mientras se cargan los datos.  
-✅ Diseño visual basado en **Tailwind CSS**.
+✅ Diseño responsive basado en **Tailwind CSS**.
 
 ## 🚀 **Decisiones Técnicas**
 
@@ -34,7 +34,7 @@ La aplicación cumple con los siguientes requisitos mencionados en el enunciado 
 ### **Gestión de la TopBar y el Loading entre páginas**
 - Se intentó implementar un loading visual en la `TopBar` durante los cambios de página. Sin embargo, esta funcionalidad fue finalmente descartada ya que el hook `useNavigate` no proporcionaba correctamente el estado de carga.
 
-## **Testing**
+## 🧪  **Testing**
 
 Se implementaron tests con **Jest** y **React Testing Library** para garantizar la estabilidad del proyecto. Los tests incluyen:
 
@@ -61,7 +61,6 @@ Se implementaron tests con **Jest** y **React Testing Library** para garantizar 
 }
 ```
 
-## ⚙️ **Instalación y Ejecución**
 ### **Iniciar la aplicación**
 Antes de iniciar la aplicación, instala las dependencias con el siguiente comando:
 
